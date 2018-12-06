@@ -1,0 +1,27 @@
+{
+  "name": "marauder-server",
+  "version": "1.0.0",
+  "description": "Server that will support the MaraudersMap App",
+  "main": "./dist/main.js",
+  "scripts": {
+    "execute": "gulp && node dist/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrei Villasana",
+  "license": "ISC",
+  "dependencies": {
+    "@types/app-module-path": "^2.2.0",
+    "@types/express": "^4.16.0",
+    "@types/node": "^10.12.12",
+    "app-module-path": "^2.2.0",
+    "express": "^4.16.4",
+    "knex": "^0.15.2",
+    "mysql": "^2.16.0",
+    "routes": "file:routes"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^5.0.0",
+    "typescript": "^3.2.1"
+  }
+}
