@@ -2,15 +2,16 @@ import { Router } from 'express'
 import MapRoutes from 'routes/map'
 
 class AllRoutes {
-    public routes = Router()
+    public routes: Router
     private mapRoutes = MapRoutes
 
     constructor() {
+        this.routes = Router()
+
         this.linkSubRoutes()
     }
 
     private linkSubRoutes() {
-        console.log('Linking sub routes')
         this.routes.use(this.mapRoutes.routes)
     }
 }

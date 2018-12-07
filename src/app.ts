@@ -2,6 +2,7 @@ import * as express from 'express'
 import { Request, Response } from 'express'
 import { createServer } from 'http'
 import AllRoutes from 'routes'
+import bodyParser = require('body-parser');
 
 class Application {
     private app = express()
@@ -12,6 +13,8 @@ class Application {
     }
 
     private configureApplication() {
+        this.app.use(bodyParser.json({ limit: '2mb'}))
+
         this.linkSubRoutes()
         this.configureApplicationRoutes()
     }

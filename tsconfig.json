@@ -1,11 +1,4 @@
 {
-    "include": [
-        "routes/**/*",
-        "src/**/*"    
-    ],
-    "exclude": [
-        "node_modules"
-    ],
     "compilerOptions": {
         "noImplicitAny": true,
         "removeComments": true,
@@ -18,5 +11,15 @@
         "typeRoots": [
             "node_modules/@types"
         ]
-    }
+    },
+    "files": [
+        "knexfile.ts"
+    ],
+    "include": [
+        "routes/**/*",
+        "src/**/*"    
+    ],
+    "exclude": [
+        "node_modules"
+    ]
 }

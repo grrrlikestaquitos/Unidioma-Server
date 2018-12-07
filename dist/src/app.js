@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express = require("express");
 const http_1 = require("http");
 const routes_1 = require("routes");
+const bodyParser = require("body-parser");
 class Application {
     constructor() {
         this.app = express();
@@ -10,6 +11,7 @@ class Application {
         this.configureApplication();
     }
     configureApplication() {
+        this.app.use(bodyParser.json({ limit: '2mb' }));
         this.linkSubRoutes();
         this.configureApplicationRoutes();
     }

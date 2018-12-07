@@ -8,21 +8,16 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = require("express");
-const controller_1 = require("routes/map/controller");
-class MapRoutes {
+const Knex = require("knex");
+class MapController {
     constructor() {
-        this.fetchPinLocations = (request, response) => __awaiter(this, void 0, void 0, function* () {
-            const data = yield this.controller.getAllPinLocations();
-            console.log(`Endpoint to fetch pin locations was called ${data}`);
-            response.status(200).json(data);
-        });
-        this.routes = express_1.Router();
-        this.controller = new controller_1.MapController();
-        this.configureMapRoutes();
+        this.knex = Knex(require('knexfile'));
     }
-    configureMapRoutes() {
-        this.routes.get('/map', this.fetchPinLocations);
+    getAllPinLocations() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const data = yield this.knex.table('locations');
+            return data;
+        });
     }
 }
-exports.default = new MapRoutes();
+exports.MapController = MapController;
