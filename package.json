@@ -14,13 +14,13 @@
     "@types/express": "^4.16.0",
     "@types/knex": "^0.15.1",
     "@types/node": "^10.12.12",
+    "api-routes": "file:src/api-routes",
     "app-module-path": "^2.2.0",
     "body-parser": "^1.18.3",
     "es6-promise": "^4.2.5",
     "express": "^4.16.4",
     "knex": "^0.15.2",
-    "mysql": "^2.16.0",
-    "routes": "file:routes"
+    "mysql": "^2.16.0"
   },
   "devDependencies": {
     "gulp": "^3.9.1",

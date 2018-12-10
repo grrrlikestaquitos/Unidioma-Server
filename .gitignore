@@ -1,1 +1,5 @@
+# Node Dependency Modules
 node_modules
+
+# Generated Distribution Code
+dist

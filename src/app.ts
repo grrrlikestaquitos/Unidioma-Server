@@ -1,22 +1,20 @@
 import * as express from 'express'
 import { Request, Response } from 'express'
 import { createServer } from 'http'
-import AllRoutes from 'routes'
-import bodyParser = require('body-parser');
+import AllRoutes from 'api-routes'
 
 class Application {
     private app = express()
     private server = createServer(this.app)
+    private allRoutes = AllRoutes
 
     constructor() {
         this.configureApplication()
     }
 
     private configureApplication() {
-        this.app.use(bodyParser.json({ limit: '2mb'}))
-
-        this.linkSubRoutes()
         this.configureApplicationRoutes()
+        this.linkSubRoutes()
     }
 
     private configureApplicationRoutes() {
@@ -26,7 +24,7 @@ class Application {
     }
 
     private linkSubRoutes() {
-        this.app.use('/api', AllRoutes.routes)
+        this.app.use('/api', this.allRoutes.router)
     }
 
     public listen() {

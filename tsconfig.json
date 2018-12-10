@@ -5,19 +5,17 @@
         "target": "es2016",
         "module": "commonjs",
         "moduleResolution": "node",
+        "resolveJsonModule": true,
         "types": [
             "node"
         ],
         "typeRoots": [
             "node_modules/@types"
-        ]
+        ],
+        "baseUrl": "./src"
     },
-    "files": [
-        "knexfile.ts"
-    ],
     "include": [
-        "routes/**/*",
-        "src/**/*"    
+        "src/**/*" 
     ],
     "exclude": [
         "node_modules"
