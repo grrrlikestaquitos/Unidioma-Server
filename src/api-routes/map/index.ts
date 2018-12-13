@@ -1,5 +1,5 @@
-import { Request, Response } from 'express'
-import { Pin } from 'api-routes/map/response'
+import { Request, Response, json } from 'express'
+import { Pin, MapResponse } from 'api-routes/map/response'
 import { MapController } from 'api-routes/map/controller'
 import { BaseRouter } from 'api-routes/base-router';
 
@@ -19,8 +19,9 @@ class MapRoutes extends BaseRouter {
     }
 
     private fetchPinLocations = async (request: Request, response: Response) => {
-        const data: Pin = await this.controller.getAllPinLocations()
-        response.status(200).json(data)
+        const data: Array<Pin> = await this.controller.getAllPinLocations()
+        const jsonResponse: MapResponse = { data }
+        response.status(200).json(jsonResponse)
     }
 
     private updatePinLocation = async (request: Request, response: Response) => {

@@ -1,7 +1,3 @@
-export enum MapPinTypes {
-    people = 'people',
-    buildings = 'buildings'
-}
 
 export interface Pin {
     name: string
@@ -11,6 +7,6 @@ export interface Pin {
 }
 
 export interface MapResponse {
-    viewType: MapPinTypes
+    viewType?: 'people' | 'buildings'
     data: Array<Pin>
 }

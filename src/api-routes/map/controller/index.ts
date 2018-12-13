@@ -1,15 +1,13 @@
-import * as Knex  from 'knex'
 import { Pin } from 'api-routes/map/response'
-import knexfile from 'resource/knexfile'
+import { BaseController } from 'api-routes/base-controller';
 
-export class MapController {
-    private knex: Knex
-
+export class MapController extends BaseController {
+    
     constructor() {
-        this.knex = Knex(knexfile)
+        super()
     }
 
-    public async getAllPinLocations(): Promise<Pin> {
+    public async getAllPinLocations(): Promise<Array<Pin>> {
         const data = await this.knex.table('locations')
         return data
     }

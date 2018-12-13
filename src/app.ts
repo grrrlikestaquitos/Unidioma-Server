@@ -1,14 +1,16 @@
 import * as express from 'express'
 import { Request, Response } from 'express'
 import { createServer } from 'http'
-import AllRoutes from 'api-routes'
+import ApiRoutes from 'api-routes'
 
 class Application {
     private app = express()
     private server = createServer(this.app)
-    private allRoutes = AllRoutes
+    private apiRoutes: typeof ApiRoutes
 
     constructor() {
+        this.apiRoutes = ApiRoutes
+
         this.configureApplication()
     }
 
@@ -24,7 +26,7 @@ class Application {
     }
 
     private linkSubRoutes() {
-        this.app.use('/api', this.allRoutes.router)
+        this.app.use('/api', this.apiRoutes.router)
     }
 
     public listen() {

@@ -1,11 +1,12 @@
 import MapRoutes from 'api-routes/map'
 import { BaseRouter } from 'api-routes/base-router';
 
-class AllRoutes extends BaseRouter {
-    private mapRoutes = MapRoutes
+class ApiRoutes extends BaseRouter {
+    private mapRoutes: typeof MapRoutes
 
     constructor() {
         super()
+        this.mapRoutes = MapRoutes
 
         this.linkSubRoutes()
     }
@@ -15,4 +16,4 @@ class AllRoutes extends BaseRouter {
     }
 }
 
-export default new AllRoutes()
+export default new ApiRoutes()

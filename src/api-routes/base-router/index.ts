@@ -2,9 +2,10 @@ import { Router } from 'express'
 import * as bodyParser from 'body-parser'
 
 export class BaseRouter {
-    public router = Router()
+    public router: Router
 
     constructor() {
+        this.router = Router()
         this.configureBodyParser()
     }
 
