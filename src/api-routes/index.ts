@@ -1,18 +1,18 @@
-import MapRoutes from 'api-routes/map'
-import { BaseRouter } from 'api-routes/base-router';
+import TallyRoutes from 'api-routes/tally/tally'
+import { BaseRouter } from 'api-routes/base-router/base-router'
 
 class ApiRoutes extends BaseRouter {
-    private mapRoutes: typeof MapRoutes
+    private tallyRoutes: typeof TallyRoutes
 
     constructor() {
         super()
-        this.mapRoutes = MapRoutes
+        this.tallyRoutes = TallyRoutes
 
         this.linkSubRoutes()
     }
 
     private linkSubRoutes() {
-        this.router.use(this.mapRoutes.router)
+        this.router.use('/tally', this.tallyRoutes.router)
     }
 }
 

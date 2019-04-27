@@ -1,10 +1,10 @@
 {
-  "name": "marauder-server",
+  "name": "server-rendering",
   "version": "1.0.0",
-  "description": "Server that will support the MaraudersMap App",
+  "description": "Render react-native code",
   "main": "./dist/main.js",
   "scripts": {
-    "execute": "gulp && node dist/main.js",
+    "start": "gulp develop",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Andrei Villasana",
@@ -12,18 +12,18 @@
   "dependencies": {
     "@types/app-module-path": "^2.2.0",
     "@types/express": "^4.16.0",
-    "@types/knex": "^0.15.1",
     "@types/node": "^10.12.12",
     "api-routes": "file:src/api-routes",
     "app-module-path": "^2.2.0",
     "body-parser": "^1.18.3",
     "es6-promise": "^4.2.5",
     "express": "^4.16.4",
-    "knex": "^0.15.2",
-    "mysql": "^2.16.0"
+    "recursos": "file:src/recursos",
+    "terram": "file:src/terram"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.4.2",
     "gulp-typescript": "^5.0.0",
     "ts-node": "^7.0.1",
     "typescript": "^3.2.1",

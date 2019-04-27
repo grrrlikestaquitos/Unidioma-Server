@@ -21,7 +21,7 @@ class Application {
 
     private configureApplicationRoutes() {
         this.app.get('/', (request: Request, response: Response) => {
-            response.status(200).json({ Home: 'Marauders Server' })
+            response.status(200).json({ Root: 'Root of the project' })
         })
     }
 
