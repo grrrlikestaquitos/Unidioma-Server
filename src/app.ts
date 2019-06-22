@@ -1,22 +1,30 @@
 import * as express from 'express'
 import { Request, Response } from 'express'
 import { createServer } from 'http'
-import ApiRoutes from 'api-routes'
+import { ApiRoutes } from 'api-routes'
+import * as bodyParser from 'body-parser'
 
-class Application {
+export class Application {
     private app = express()
     private server = createServer(this.app)
-    private apiRoutes: typeof ApiRoutes
+    private apiRoutes: ApiRoutes
 
     constructor() {
-        this.apiRoutes = ApiRoutes
+        this.apiRoutes = new ApiRoutes()
 
         this.configureApplication()
     }
 
     private configureApplication() {
+        
+        this.bodyParserConfig()
         this.configureApplicationRoutes()
         this.linkSubRoutes()
+    }
+
+    private bodyParserConfig() {
+        this.app.use(bodyParser.json())
+        this.app.use(bodyParser.urlencoded({ extended: true }))
     }
 
     private configureApplicationRoutes() {
@@ -35,5 +43,3 @@ class Application {
         })
     }
 }
-
-export default new Application()
