@@ -1,23 +1,32 @@
 import { Request, Response } from 'express'
-import { TallyRoutes } from 'api-routes/tally/tally'
 import { BaseRouter } from 'api-routes/base-router/base-router'
+import { CharacterRoute } from './character-route/character-route';
+
+enum CharacterType {
+    kanji = 'kanji',
+    hiragana = 'hiragana',
+    katakana = 'katakana',
+    chinese = 'chinese'
+}
 
 export class ApiRoutes extends BaseRouter {
-    // private tallyRoutes: TallyRoutes
-
     constructor() {
         super()
-        // this.tallyRoutes = new TallyRoutes()
 
-        this.linkSubRoutes()
+        this.buildCharacterRoutes()
     }
 
-    private linkSubRoutes() {
-        // this.router.use('/tally', this.tallyRoutes.router)
+    private buildCharacterRoutes() {
+        enum Characters {
+            kanji = 'kanji',
+            hiragana = 'hiragana',
+            katakana = 'katakana',
+            chinese = 'chinese'
+        }
 
-        this.router.post('/', (request: Request, response: Response) => {
-            console.log(`${JSON.stringify(request.body)}`)
-            response.json('good')
+        Object.keys(CharacterType).map((type) => {
+            console.log(`Create character route for ${type}`)
+            this.router.use(new CharacterRoute(type).router)
         })
     }
 }
