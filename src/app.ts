@@ -3,8 +3,9 @@ import { Request, Response } from 'express'
 import { createServer } from 'http'
 import { ApiRoutes } from 'api-routes'
 import * as bodyParser from 'body-parser'
+import env from 'env'
 
-export class Application {
+export class Application {  
     private app = express()
     private server = createServer(this.app)
     private apiRoutes: ApiRoutes
@@ -38,8 +39,8 @@ export class Application {
     }
 
     public listen() {
-        this.server.listen(7555, () => {
-            console.log('Server running on port 7555')
+        this.server.listen(env.PORT, () => {
+            console.log(`Server running on ${env.PORT}`)
         })
     }
 }

@@ -2,9 +2,10 @@
   "name": "server-rendering",
   "version": "1.0.0",
   "description": "Render react-native code",
-  "main": "./dist/main.js",
   "scripts": {
-    "start": "gulp develop",
+    "start": "npm run build && node ./dist/main.js",
+    "develop": "gulp develop",
+    "build": "gulp default",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Andrei Villasana",
