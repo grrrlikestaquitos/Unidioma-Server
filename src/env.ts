@@ -1,3 +1,1 @@
-export default {
-    PORT: 8080
-}
+export default {}
