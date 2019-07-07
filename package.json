@@ -1,7 +1,7 @@
 {
-  "name": "server-rendering",
+  "name": "hirakana",
   "version": "1.0.0",
-  "description": "Render react-native code",
+  "description": "Hirakana app - learn japanese and chinese",
   "scripts": {
     "start": "npm run build && node ./dist/main.js",
     "develop": "gulp develop",
@@ -19,10 +19,10 @@
     "body-parser": "^1.18.3",
     "es6-promise": "^4.2.5",
     "express": "^4.16.4",
-    "knex": "^0.18.2"
+    "knex": "^0.18.2",
+    "gulp": "^4.0.2"
   },
   "devDependencies": {
-    "gulp": "^4.0.2",
     "gulp-nodemon": "^2.4.2",
     "gulp-typescript": "^5.0.0",
     "ts-node": "^7.0.1",
