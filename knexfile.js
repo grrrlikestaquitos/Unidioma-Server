@@ -14,7 +14,7 @@ module.exports = {
       max: 10
     },
     migrations: {
-      directory: __dirname + 'migrations'
+      directory: __dirname + '/migrations'
     }
   }
 
