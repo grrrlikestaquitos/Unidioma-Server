@@ -14,6 +14,7 @@ gulp.task('develop', (done) => {
         script: 'dist/main.js',
         ext: 'ts js env',
         ignore: ['dist/', 'node_modules/'],
+        tasks: ['default'],
         done: done
     })
   

@@ -17,13 +17,6 @@ export class ApiRoutes extends BaseRouter {
     }
 
     private buildCharacterRoutes() {
-        enum Characters {
-            kanji = 'kanji',
-            hiragana = 'hiragana',
-            katakana = 'katakana',
-            chinese = 'chinese'
-        }
-
         Object.keys(CharacterType).map((type) => {
             console.log(`Create character route for ${type}`)
             this.router.use(new CharacterRoute(type).router)
