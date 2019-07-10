@@ -10,7 +10,7 @@ const KatakanaR = (character, romaji) => ({ character, romaji, type: 'r' })
 const KatakanaW = (character, romaji) => ({ character, romaji, type: 'w' })
 const KatakanaEtc = (character, romaji) => ({ character, romaji, type: 'etc' })
 
-const KatakanaCharacters = [
+const katakanaCharacters = [
   KatakanaVowel('ア', 'a'), KatakanaVowel('イ', 'i'), KatakanaVowel('ウ', 'u'), KatakanaVowel('エ', 'e'), KatakanaVowel('オ', 'o'),
   KatakanaK('カ', 'ka'), KatakanaK('キ', 'ki'), KatakanaK('ク', 'ku'), KatakanaK('ケ', 'ke'), KatakanaK('コ', 'ko'),
   KatakanaS('サ', 'sa'), KatakanaS('シ', 'shi'), KatakanaS('ス', 'su'), KatakanaS('セ', 'se'), KatakanaS('ソ', 'so'),
@@ -28,6 +28,6 @@ exports.seed = async function(knex) {
   const table = 'katakana'
   await knex(table).del()
 
-  const characters = KatakanaCharacters.map((char, index) => ({ id: index, ...char }))
+  const characters = katakanaCharacters.map((char, index) => ({ id: index, ...char }))
   return await knex(table).insert(characters)
 };
