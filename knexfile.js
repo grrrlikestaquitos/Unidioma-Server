@@ -3,6 +3,12 @@ module.exports = {
     client: 'postgresql',
     connection: {
       database: 'hirakana',
+    },
+    migrations: {
+      directory: __dirname + '/database/migrations'
+    },
+    seeds: {
+      directory: __dirname + '/database/seeds'
     }
   },
 
@@ -14,7 +20,10 @@ module.exports = {
       max: 10
     },
     migrations: {
-      directory: __dirname + '/migrations'
+      directory: __dirname + '/database/migrations'
+    },
+    seeds: {
+      directory: __dirname + '/database/seeds'
     }
   }
 
