@@ -1,4 +1,3 @@
-import { Request, Response } from 'express'
 import { BaseRouter } from 'api-routes/base-router/base-router'
 import { CharacterRoute } from './character-route/character-route';
 
