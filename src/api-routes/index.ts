@@ -1,5 +1,5 @@
 import { BaseRouter } from 'api-routes/base-router/base-router'
-import { CharacterRoute } from './character-route/character-route';
+import { CharacterRoute } from 'api-routes/character-route/character-route'
 
 enum CharacterType {
     kanji = 'kanji',
@@ -17,7 +17,6 @@ export class ApiRoutes extends BaseRouter {
 
     private buildCharacterRoutes() {
         Object.keys(CharacterType).map((type) => {
-            console.log(`Create character route for ${type}`)
             this.router.use(new CharacterRoute(type).router)
         })
     }
