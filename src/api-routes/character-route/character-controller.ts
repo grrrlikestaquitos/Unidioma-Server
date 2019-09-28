@@ -25,6 +25,18 @@ export class CharacterController {
         completion.success({ data: characters })
     }
 
+    public async getCharacter(query: any, completion: Completion) {
+        const { id } = query
+
+        if (id) {
+            const character = await this.store.getCharacter(id)
+            completion.success({ data: character })
+        } else {
+            const error = ResponseError('Missing query parameter: [id: int]')
+            completion.failure(error)
+        }
+    }
+
     public async handleRangeQuery(query: any, completion: Completion) {
         const { isValid, message } = this.validateRangeQuery(query)
 

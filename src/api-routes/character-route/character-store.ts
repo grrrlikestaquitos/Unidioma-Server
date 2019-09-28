@@ -19,4 +19,9 @@ export class CharacterStore {
         const characters = await this.knex.select('*')
         return characters
     }
+
+    public getCharacter = async (id: number) => {
+        const character = await this.knex.where({ id })
+        return character
+    }
 }
