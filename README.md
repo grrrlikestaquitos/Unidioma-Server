@@ -1,2 +1,2 @@
-# Hirakana-Server
-Server Application for Hirakana
+# Unidioma-Server
+Server Application for Unidioma

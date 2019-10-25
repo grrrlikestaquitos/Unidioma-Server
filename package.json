@@ -1,7 +1,7 @@
 {
-  "name": "hirakana",
+  "name": "unidioma-server",
   "version": "1.0.0",
-  "description": "Hirakana app - learn japanese and chinese",
+  "description": "Unidioma app - learn japanese and chinese",
   "scripts": {
     "start": "npm run build && node ./dist/main.js",
     "develop": "gulp develop",

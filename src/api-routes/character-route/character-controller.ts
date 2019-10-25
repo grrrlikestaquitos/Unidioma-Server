@@ -2,14 +2,14 @@ import { CharacterStore } from 'api-routes/character-route/character-store'
 
 interface Completion {
     success: (data: object) => void
-    failure?: (error: HirakanaError) => void
+    failure?: (error: ServerError) => void
 }
 
-interface HirakanaError {
+interface ServerError {
     error: { message: string }
 }
 
-const ResponseError = (message: string): HirakanaError => {
+const ResponseError = (message: string): ServerError => {
     return { error: { message } }
 }
 
