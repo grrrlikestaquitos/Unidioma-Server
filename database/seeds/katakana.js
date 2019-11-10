@@ -1,7 +1,7 @@
 const KatakanaVowel = (character, romaji) => ({ character, romaji, type: 'v' })
 const KatakanaK = (character, romaji) => ({ character, romaji, type: 'k' })
 const KatakanaS = (character, romaji) => ({ character, romaji, type: 's' })
-const KatakanaT = (character, romaji) => ({ character, romaji, type: 's' })
+const KatakanaT = (character, romaji) => ({ character, romaji, type: 't' })
 const KatakanaN = (character, romaji) => ({ character, romaji, type: 'n' })
 const KatakanaH = (character, romaji) => ({ character, romaji, type: 'h' })
 const KatakanaM = (character, romaji) => ({ character, romaji, type: 'm' })
