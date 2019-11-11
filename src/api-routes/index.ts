@@ -5,7 +5,7 @@ enum CharacterType {
     kanji = 'kanji',
     hiragana = 'hiragana',
     katakana = 'katakana',
-    chinese = 'chinese'
+    pinyin = 'pinyin'
 }
 
 export class ApiRoutes extends BaseRouter {
