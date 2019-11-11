@@ -6,7 +6,8 @@
     "start": "npm run build && node ./dist/main.js",
     "develop": "gulp develop",
     "build": "gulp default",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed:all": "knex seed:run"
   },
   "author": "Andrei Villasana",
   "license": "ISC",
