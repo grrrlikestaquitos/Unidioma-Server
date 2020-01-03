@@ -2,6 +2,11 @@ const gulp = require('gulp')
 const nodemon = require('gulp-nodemon')
 const ts = require('gulp-typescript')
 const tsProject = ts.createProject('tsconfig.json')
+const del = require('del')
+
+gulp.task('clean', () => {
+    return del('dist/**', { force: true })
+})
 
 gulp.task('default', () => {
     return tsProject.src()
@@ -14,7 +19,7 @@ gulp.task('develop', (done) => {
         script: 'dist/main.js',
         ext: 'ts js env',
         ignore: ['dist/', 'node_modules/'],
-        tasks: ['default'],
+        tasks: ['clean', 'default'],
         done: done
     })
   

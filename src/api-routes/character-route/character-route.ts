@@ -1,11 +1,12 @@
 import { Request, Response } from 'express'
 import { BaseRouter } from 'api-routes/base-router/base-router'
 import { CharacterController } from 'api-routes/character-route/character-controller'
+import { CharacterType } from 'types'
 
 export class CharacterRoute extends BaseRouter {
-    character: string
+    character: CharacterType
 
-    constructor(character: string) {
+    constructor(character: CharacterType) {
         super()
         this.character = character
 

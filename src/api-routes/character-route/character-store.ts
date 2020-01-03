@@ -1,10 +1,11 @@
 import database from 'database'
+import { CharacterType } from 'types'
 
 export class CharacterStore {
-    character: string
+    character: CharacterType
     knex: any
 
-    constructor(character: string) {
+    constructor(character: CharacterType) {
         this.character = character
         this.knex = database(character)
     }

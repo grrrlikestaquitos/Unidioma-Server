@@ -30,4 +30,4 @@ exports.seed = async function(knex) {
 
   const characters = katakanaCharacters.map((char, index) => ({ id: index, ...char }))
   return await knex(table).insert(characters)
-};
+}
