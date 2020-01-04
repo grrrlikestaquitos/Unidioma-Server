@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Unidioma app - learn japanese and chinese",
   "scripts": {
-    "build-start": "npm run build && node ./dist/main.js",
+    "start": "npm run build && node ./dist/main.js",
     "clean": "gulp clean",
     "develop": "gulp develop",
     "build": "gulp default",
