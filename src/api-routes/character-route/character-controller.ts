@@ -1,22 +1,11 @@
 import { CharacterStore } from 'api-routes/character-route/character-store'
-
-interface Completion {
-    success: (data: object) => void
-    failure?: (error: ServerError) => void
-}
-
-interface ServerError {
-    error: { message: string }
-}
-
-const ResponseError = (message: string): ServerError => {
-    return { error: { message } }
-}
+import { ResponseError, Completion } from 'api-routes/api-interfaces/api-interface'
+import { CharacterType } from 'types'
 
 export class CharacterController {
     store: CharacterStore
 
-    constructor(character: string) {
+    constructor(character: CharacterType) {
         this.store = new CharacterStore(character)
     }
 
