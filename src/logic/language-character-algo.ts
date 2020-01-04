@@ -11,6 +11,7 @@ const LanguageConfig: Config = {
 }
 
 export const determineCharacterForTheDay = () => {
+    console.log(`Running determineCharacterForTheDay`)
     Object.entries(LanguageConfig).map(async ([language, selectedType]) => {
         const knex = database(language)
         const typeInfoArray = await knex.where({ type: selectedType }).select('type', 'id', 'last_updated')
