@@ -17,7 +17,7 @@ export class LanguageController {
         const [characterInfo] = await this.store.getCharacterInfo(characterType)
         const { type, id } = characterInfo
         const characterStore = new CharacterStore(characterType)
-        const character = await characterStore.getCharacter(id)
+        const character = (await characterStore.getCharacter(id))[0]
 
         completion.success({ data: { character, type } })
     }

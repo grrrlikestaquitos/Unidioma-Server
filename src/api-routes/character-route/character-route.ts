@@ -45,10 +45,8 @@ export class CharacterRoute extends BaseRouter {
         this.router.get(`/${this.character}/all`, async (request: Request, response: Response) => {
             const controller = new CharacterController(this.character)
 
-            console.log('Initiated all request')
             await controller.getAllCharacters({
                 success: async (data) => {
-                    console.log('Completed all request')
                     response.status(200).json(data)
                 }
             })

@@ -11,7 +11,6 @@ const LanguageConfig: Config = {
 }
 
 export const determineCharacterForTheDay = () => {
-    console.log(`Running determineCharacterForTheDay`)
     Object.entries(LanguageConfig).map(async ([language, selectedType]) => {
         const knex = database(language)
         const typeInfoArray = await knex.where({ type: selectedType }).select('type', 'id', 'last_updated')
@@ -49,11 +48,9 @@ const getUpdatedIdForType = async (type: CharacterType, oldId: number) => {
     if (count > oldId) { // There are still more characters to go through, update to next character
         const updatedId = oldId + 1
 
-        console.log(`Id was updated ${updatedId}`)
         return updatedId
     }
 
-    if (oldId === count) { // We've reached the end of characters, more characters need to be added
-        console.log(`Id is identical, end met`)   
+    if (oldId === count) { // We've reached the end of characters, more characters need to be added 
     } 
 }
