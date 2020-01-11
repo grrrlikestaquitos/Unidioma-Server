@@ -2,6 +2,7 @@ import { LanguageStore } from 'api-routes/language-route/language-store'
 import { Completion } from 'api-routes/api-interfaces/api-interface'
 import { LanguageType, CharacterType } from 'types'
 import { CharacterStore } from 'api-routes/character-route/character-store'
+import { LanguageConfig } from 'config'
 
 export class LanguageController {
     language: LanguageType
@@ -23,11 +24,6 @@ export class LanguageController {
     }
 
     private getCharacterTypeForLanguage(): CharacterType {
-        switch (this.language) {
-            case 'japanese':
-                return CharacterType.kanji
-            case 'chinese':
-                return CharacterType.pinyin
-        }
+        return LanguageConfig[this.language];
     }
 }

@@ -1,14 +1,7 @@
 import database from 'database'
-import { LanguageType, DateFormat, CharacterType } from 'types'
+import { DateFormat, CharacterType } from 'types'
+import { LanguageConfig } from 'config';
 import * as moment from 'moment'
-
-type Config = { [key in LanguageType]: CharacterType }
-
-// TODO: Create a single source of truth for this config, currently there are multiple
-const LanguageConfig: Config = {
-    japanese: CharacterType.kanji,
-    chinese: CharacterType.pinyin
-}
 
 export const determineCharacterForTheDay = () => {
     Object.entries(LanguageConfig).map(async ([language, selectedType]) => {
